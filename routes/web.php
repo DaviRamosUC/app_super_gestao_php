@@ -29,18 +29,29 @@ options
 */
 // Route::get($uri, $callback);
 Route::get('/', 'PrincipalController@principal');
-
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
-
 Route::get('/contato', 'ContatoController@contato');
+Route::get('/login', function () {
+    return 'Login';
+});
 
-Route::get('/login', function (){ return 'Login'; });
+/*
+ * Agrupando rotas ao prefixo app
+ * Dessa forma só é possível acessar a rota apartir do prefixo /app
+ * Exemplo: "localhost:8000/app/clientes"
+*/
+Route::prefix('/app')->group(function () {
+    Route::get('/clientes', function () {
+        return 'Clientes';
+    });
+    Route::get('/fornecedores', function () {
+        return 'Fornecedores';
+    });
+    Route::get('/produtos', function () {
+        return 'Produtos';
+    });
+});
 
-Route::get('/clientes', function (){ return 'Clientes'; });
-
-Route::get('/fornecedores', function (){ return 'Fornecedores'; });
-
-Route::get('/produtos', function (){ return 'Produtos'; });
 
 /*
 Rota com parâmetro
