@@ -22,7 +22,19 @@ Route::get('/', 'PrincipalController@principal');
 
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
-Route::get('/contato','ContatoController@contato');
+Route::get('/contato', 'ContatoController@contato');
+
+/*
+Rota com parâmetro
+
+Parâmetros necessários para rota: nome, categoria, assunto, mensagem
+
+Para recuperar o parâmetro basta criar uma variável com qualquer nome,
+ela virá de acordo com a sequência
+*/
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}', function (string $nome, string $categoria, string $assunto, string $mensagem) {
+    echo 'Rota contato com parâmetro nome = ' . $nome . ' - ' . $categoria . ' - ' . $assunto . ' - ' . $mensagem;
+});
 
 // Route::get($uri, $callback);
 
