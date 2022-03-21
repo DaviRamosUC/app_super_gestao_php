@@ -37,16 +37,14 @@ e definir um valor default para a variável em questão
 
 Os parâmetros opcionais deves ser definidos da direita para a esquerda sempre, caso contrário o framework ficará perdido
 */
-Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem?}',
+Route::get('/contato/{nome}/{categoria_id}',
     function (
-        string $nome,
-        string $categoria,
-        string $assunto,
-        string $mensagem = 'mensagem não informada'
+        string $nome = 'Desconhecido',
+        int $categoria_id = 1 // 1 - Informação
     ) {
-        echo 'Rota contato com parâmetro nome = ' . $nome . ' - ' . $categoria . ' - ' . $assunto . ' - ' . $mensagem;
+        echo 'Rota contato com parâmetros <br>Nome: ' . $nome . ' <br>Categoria: ' . $categoria_id;
     }
-);
+) -> where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
 
 // Route::get($uri, $callback);
 
