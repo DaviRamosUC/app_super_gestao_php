@@ -52,7 +52,7 @@ Route::prefix('/app')->group(function () {
     })->name("app.produtos");
 });
 
-Route::get('teste/{p1}/{p2}','TesteController@teste')->name('teste');
+Route::get('teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
 /*
 Route::get('rota1', function () {
     echo 'Rota 1';
@@ -66,8 +66,8 @@ Route::get('rota2', function () {
 Redirecionamento em linha (sem a necessidade de ter a rota ativa)
 Route::redirect('/rota2', '/rota1');*/
 //Rota de erro padrão, substitui a página 404 do framework
-Route::fallback(function (){
-   echo 'A rota acessada não existe. <a href="'.route('site.index').'">Clique aqui<a/> para ir para página inicial';
+Route::fallback(function () {
+    echo 'A rota acessada não existe. <a href="' . route('site.index') . '">Clique aqui<a/> para ir para página inicial';
 });
 
 
@@ -84,13 +84,15 @@ e definir um valor default para a variável em questão
 
 Os parâmetros opcionais deves ser definidos da direita para a esquerda sempre, caso contrário o framework ficará perdido
 */
-//Route::get('/contato/{nome}/{categoria_id}',
-//    function (
-//        string $nome = 'Desconhecido',
-//        int $categoria_id = 1 // 1 - Informação
-//    ) {
-//        echo 'Rota contato com parâmetros <br>Nome: ' . $nome . ' <br>Categoria: ' . $categoria_id;
-//    }
-//) -> where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
+/*
+ Route::get('/contato/{nome}/{categoria_id}',
+    function (
+        string $nome = 'Desconhecido',
+        int $categoria_id = 1 // 1 - Informação
+    ) {
+        echo 'Rota contato com parâmetros <br>Nome: ' . $nome . ' <br>Categoria: ' . $categoria_id;
+    }
+) -> where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
+*/
 
 
