@@ -8,6 +8,6 @@ class PrincipalController extends Controller
 {
     //Métodos dentro de controladores são chamados de actions
     public function principal(){
-        echo 'Olá, seja bem vindo ao curso!';
+        return view('site.principal');
     }
 }
