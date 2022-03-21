@@ -64,6 +64,11 @@ Route::get('rota2', function () {
 /*Redirecionamento em linha (sem a necessidade de ter a rota ativa)
 Route::redirect('/rota2', '/rota1');*/
 
+//Rota de erro padrão, substitui a página 404 do framework
+Route::fallback(function (){
+   echo 'A rota acessada não existe. <a href="'.route('site.index').'">Clique aqui<a/> para ir para página inicial';
+});
+
 
 /*
 Rota com parâmetro
