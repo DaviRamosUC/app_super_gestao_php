@@ -31,10 +31,22 @@ Parâmetros necessários para rota: nome, categoria, assunto, mensagem
 
 Para recuperar o parâmetro basta criar uma variável com qualquer nome,
 ela virá de acordo com a sequência
+
+Para fazer um parâmetro opcional basta adicionar a ? ao fim da declaração do parâmetro
+e definir um valor default para a variável em questão
+
+Os parâmetros opcionais deves ser definidos da direita para a esquerda sempre, caso contrário o framework ficará perdido
 */
-Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem}', function (string $nome, string $categoria, string $assunto, string $mensagem) {
-    echo 'Rota contato com parâmetro nome = ' . $nome . ' - ' . $categoria . ' - ' . $assunto . ' - ' . $mensagem;
-});
+Route::get('/contato/{nome}/{categoria}/{assunto}/{mensagem?}',
+    function (
+        string $nome,
+        string $categoria,
+        string $assunto,
+        string $mensagem = 'mensagem não informada'
+    ) {
+        echo 'Rota contato com parâmetro nome = ' . $nome . ' - ' . $categoria . ' - ' . $assunto . ' - ' . $mensagem;
+    }
+);
 
 // Route::get($uri, $callback);
 
