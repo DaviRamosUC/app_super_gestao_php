@@ -15,7 +15,7 @@
 @endphp
 
 @isset($fornecedores)
-    @foreach($fornecedores as $indicie => $fornecedor)
+    @forelse($fornecedores as $indicie => $fornecedor)
         Fornecedor: {{$fornecedor['nome']}}
         <br>
         Status: {{$fornecedor['status']}}
@@ -38,5 +38,7 @@
             Estado não identificado
         @endswitch
         <hr>
-    @endforeach
+    @empty
+        Não existem fornecedores cadastrados
+    @endforelse
 @endisset
