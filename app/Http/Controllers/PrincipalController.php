@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PrincipalController extends Controller
 {
     //Métodos dentro de controladores são chamados de actions
