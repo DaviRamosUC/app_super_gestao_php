@@ -6,17 +6,12 @@ class FornecedorController extends Controller
 {
     public function index()
     {
+        /* exemplo if/else
         $fornecedores = [
             'Fornecedor 1',
-            'Fornecedor 2',
-            'Fornecedor 3',
-            'Fornecedor 4',
-            'Fornecedor 5',
-            'Fornecedor 6',
-            'Fornecedor 7',
-            'Fornecedor 8',
-            'Fornecedor 9',
-            'Fornecedor 10',
+        ];*/
+        $fornecedores = [
+            0 => ['nome' => 'Fornecedor 1', 'status' => 'N']
         ];
         return view('app.fornecedor.index', compact('fornecedores'));
     }
