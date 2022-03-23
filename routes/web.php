@@ -35,6 +35,9 @@ Route::get('/login', function () {
     return 'Login';
 })->name("site.login");
 
+// Métodos post
+Route::post('/contato', 'ContatoController@contato')->name("site.contato");
+
 /*
  * Agrupando rotas ao prefixo app
  * Dessa forma só é possível acessar a rota apartir do prefixo /app
