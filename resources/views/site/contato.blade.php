@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
 <html lang="pt-br">
     <head>
         <title>Super Gestão - Contato</title>
@@ -28,7 +29,7 @@
             input, select, textarea, button {
                 width: 100%;
                 padding: 10px 15px;
-                margin: 10px 0px 10px 0px;
+                margin: 10px 0 10px 0;
                 box-sizing: border-box;
                 border-radius: 3px;
                 background-color: transparent;
@@ -74,7 +75,7 @@
                 width: 100%;
                 background-color: #f8f8f8;
                 position: absolute;
-                padding: 20px 0px 10px 0px;
+                padding: 20px 0 10px 0;
             }
 
             .logo {
@@ -135,7 +136,7 @@
             }
 
             .contato-principal {
-                margin: 0px 60px 60px 40px;
+                margin: 0 60px 60px 40px;
             }
 
             .chamada {
@@ -160,7 +161,7 @@
             }
 
             .titulo-pagina {
-                padding: 100px 0px 60px 0px;
+                padding: 100px 0 60px 0;
                 background-color: #2a9ee2;
                 text-align: center;
             }
@@ -192,7 +193,7 @@
             }
 
             .redes-sociais img {
-                margin: 0px 15px 0px 15px;
+                margin: 0 15px 0 15px;
             }
 
         </style>
@@ -202,7 +203,7 @@
         <div class="topo">
 
             <div class="logo">
-                <img src="img/logo.png">
+                <img src="{{asset('img/logo.png')}}" alt="Logo">
             </div>
 
             <div class="menu">
@@ -246,9 +247,9 @@
         <div class="rodape">
             <div class="redes-sociais">
                 <h2>Redes sociais</h2>
-                <img src="img/facebook.png">
-                <img src="img/linkedin.png">
-                <img src="img/youtube.png">
+                <img src="{{asset('img/facebook.png')}}" alt="Facebook Logo">
+                <img src="{{asset('img/linkedin.png')}}" alt="Linkedin Logo">
+                <img src="{{asset('img/youtube.png')}}" alt="Youtube Logo">
             </div>
             <div class="area-contato">
                 <h2>Contato</h2>
@@ -258,7 +259,7 @@
             </div>
             <div class="localizacao">
                 <h2>Localização</h2>
-                <img src="img/mapa.png">
+                <img src="{{asset('img/mapa.png')}}" alt="Mapa Icon">
             </div>
         </div>
     </body>
