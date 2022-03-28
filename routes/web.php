@@ -36,7 +36,7 @@ Route::get('/login', function () {
 })->name("site.login");
 
 // Métodos post
-Route::post('/contato', 'ContatoController@contato')->name("site.contato");
+Route::post('/contato', 'ContatoController@salvar')->name("site.contato");
 
 /*
  * Agrupando rotas ao prefixo app
