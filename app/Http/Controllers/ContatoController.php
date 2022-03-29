@@ -20,7 +20,7 @@ class ContatoController extends Controller
         $request->validate([
             'nome' => 'required|min:3|max:40', //nomes com no mínimo 3 caracteres e no máximo 40
             'telefone' => 'required',
-            'email' => 'email', //valida se o email digitado é válido
+            'email' => 'email|unique:site_contatos', //valida se o email digitado é válido e não está cadastrado
             'motivo_contatos_id' => 'required',
             'mensagem' => 'required',
         ]);
