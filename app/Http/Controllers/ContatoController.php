@@ -21,9 +21,10 @@ class ContatoController extends Controller
             'nome' => 'required|min:3|max:40', //nomes com no mínimo 3 caracteres e no máximo 40
             'telefone' => 'required',
             'email' => 'email', //valida se o email digitado é válido
-            'motivo_contato' => 'required',
+            'motivo_contatos_id' => 'required',
             'mensagem' => 'required',
         ]);
         SiteContato::create($request->all());
+        return redirect()->route('site.index');
     }
 }
