@@ -29,7 +29,7 @@ options
 
 */
 // Route::get($uri, $callback);
-Route::get('/', 'PrincipalController@principal')->name("site.index");
+Route::get('/', 'PrincipalController@principal')->name("site.index")->middleware('log.acesso');
 
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name("site.sobrenos");
 
