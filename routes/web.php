@@ -29,7 +29,7 @@ options
 
 */
 // Route::get($uri, $callback);
-Route::get('/', 'PrincipalController@principal')->name("site.index")->middleware('log.acesso');
+Route::get('/', 'PrincipalController@principal')->name("site.index");
 
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name("site.sobrenos");
 
@@ -48,13 +48,21 @@ Route::post('/contato', 'ContatoController@salvar')->name("site.contato");
  * Exemplo: "localhost:8000/app/clientes"
 */
 Route::prefix('/app')->group(function () {
+
     Route::get('/clientes', function () {
         return 'Clientes';
-    })->name("app.clientes");
-    Route::get('/fornecedores', 'FornecedorController@index')->name("app.fornecedores");
+    })->name("app.clientes")
+        ->middleware('autenticacao');
+
+    Route::get('/fornecedores', 'FornecedorController@index')
+        ->name("app.fornecedores")
+        ->middleware('autenticacao');
+
     Route::get('/produtos', function () {
         return 'Produtos';
-    })->name("app.produtos");
+    })->name("app.produtos")
+        ->middleware('autenticacao');
+
 });
 
 Route::get('teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
