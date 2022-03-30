@@ -47,21 +47,19 @@ Route::post('/contato', 'ContatoController@salvar')->name("site.contato");
  * Dessa forma só é possível acessar a rota apartir do prefixo /app
  * Exemplo: "localhost:8000/app/clientes"
 */
-Route::prefix('/app')->group(function () {
+Route::middleware('autenticacao')->prefix('/app')->group(function () {
 
     Route::get('/clientes', function () {
         return 'Clientes';
-    })->name("app.clientes")
-        ->middleware('autenticacao');
+    })->name("app.clientes");
+
 
     Route::get('/fornecedores', 'FornecedorController@index')
-        ->name("app.fornecedores")
-        ->middleware('autenticacao');
+        ->name("app.fornecedores");
 
     Route::get('/produtos', function () {
         return 'Produtos';
-    })->name("app.produtos")
-        ->middleware('autenticacao');
+    })->name("app.produtos");
 
 });
 
