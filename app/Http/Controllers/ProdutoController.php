@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Fornecedor;
 use App\Produto;
+use App\Unidade;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -11,7 +12,7 @@ class ProdutoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index(Request $request)
     {
@@ -23,11 +24,13 @@ class ProdutoController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
-        echo 'Create';
+        $unidades = Unidade::all();
+
+        return view('app.produto.create', ['unidades' => $unidades]);
     }
 
     /**
