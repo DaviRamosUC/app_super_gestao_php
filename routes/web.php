@@ -20,6 +20,7 @@ Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(functi
     Route::get('/sair', 'LoginController@sair')->name("app.sair");
     Route::get('/cliente', 'ClienteController@index')->name("app.cliente");
 
+    //Rotas de fornecedores
     Route::get('/fornecedor', 'FornecedorController@index')->name("app.fornecedor");
     Route::get('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
     Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name("app.fornecedor.adicionar");
@@ -29,7 +30,8 @@ Route::middleware('autenticacao:padrao,visitante')->prefix('/app')->group(functi
     Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name("app.fornecedor.excluir");
 
 
-    Route::get('/produto', 'ProdutoController@index')->name("app.produto");
+    //Rotas de Produtos
+    Route::resource('produto', 'ProdutoController');
 });
 
 Route::get('teste/{p1}/{p2}', 'TesteController@teste')->name('teste');

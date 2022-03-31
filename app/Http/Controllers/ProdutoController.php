@@ -14,7 +14,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        echo 'index';
     }
 
     /**
@@ -24,13 +24,13 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        echo 'Create';
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class ProdutoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Produto  $produto
+     * @param \App\Produto $produto
      * @return \Illuminate\Http\Response
      */
     public function show(Produto $produto)
@@ -52,7 +52,7 @@ class ProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Produto  $produto
+     * @param \App\Produto $produto
      * @return \Illuminate\Http\Response
      */
     public function edit(Produto $produto)
@@ -63,8 +63,8 @@ class ProdutoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Produto  $produto
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Produto $produto
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Produto $produto)
@@ -75,7 +75,7 @@ class ProdutoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Produto  $produto
+     * @param \App\Produto $produto
      * @return \Illuminate\Http\Response
      */
     public function destroy(Produto $produto)
