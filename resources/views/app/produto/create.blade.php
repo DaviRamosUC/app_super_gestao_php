@@ -12,13 +12,12 @@
         <div class="menu">
             <ul>
                 <li><a href="{{route('produto.index')}}">Voltar</a></li>
-                <li><a href="">Consulta</a></li>
             </ul>
         </div>
 
         <div class="informacao-pagina">
             <div style="width: 30%; margin-left: auto; margin-right: auto;">
-                <form action="" method="post">
+                <form action="{{route('produto.store')}}" method="post">
                     @csrf
                     <input type="text" name="nome" value="" placeholder="Nome"
                            class="borda-preta">
