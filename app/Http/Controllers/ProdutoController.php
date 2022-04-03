@@ -67,11 +67,11 @@ class ProdutoController extends Controller
      * Display the specified resource.
      *
      * @param \App\Produto $produto
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show(Produto $produto)
     {
-        //
+        return view('app.produto.show', ['produto' => $produto]);
     }
 
     /**
