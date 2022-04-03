@@ -41,7 +41,7 @@
                     {{$errors->has('unidade_id') ? $errors->first('unidade_id'): ''}}
 
                     <button type="submit"
-                            class="borda-preta">{{isset($fornecedor) ? 'Atualizar' : 'Cadastrar'}}</button>
+                            class="borda-preta">'Cadastrar'}}</button>
                 </form>
             </div>
         </div>
