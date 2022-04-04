@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Fornecedor;
 use App\Produto;
+use App\Item;
+use App\ItemDetalhe;
 use App\ProdutoDetalhe;
 use App\Unidade;
 use Illuminate\Http\Request;
@@ -17,9 +19,12 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produtos = Produto::paginate(10);
+        $produtos = Item::paginate(10);
 
         /*
+            * Implementação hard code do hasOne e belongsTo
+            * Relação 1 x 1
+
         foreach ($produtos as $key => $produto) {
             $produtoDetalhe = ProdutoDetalhe::where('produto_id', $produto->id)->first();
             if (isset($produtoDetalhe)) {
