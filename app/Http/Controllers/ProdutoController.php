@@ -19,7 +19,7 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produtos = Item::paginate(10);
+        $produtos = Item::with(['itemDetalhe'])->paginate(10);
 
         /*
             * Implementação hard code do hasOne e belongsTo

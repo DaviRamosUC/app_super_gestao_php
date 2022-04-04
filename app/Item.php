@@ -15,7 +15,7 @@ class Item extends Model
      * 1 registro relacionado em produto_detalhes (fk) -> produto_id
      * produtos (pk)-> id
     */
-    public function produtoDetalhe(){
+    public function itemDetalhe(){
         return $this->hasOne('App\ItemDetalhe', 'produto_id', 'id');
     }
 }
