@@ -19,7 +19,9 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produtos = Item::with(['itemDetalhe'])->paginate(10);
+        //  Ao adicionar o item 'fornecedor' dentro do array com with
+        //  é implementado o approach de Eager Loading
+        $produtos = Item::with(['itemDetalhe', 'fornecedor'])->paginate(10);
 
         /*
             * Implementação hard code do hasOne e belongsTo

@@ -14,4 +14,9 @@ class Fornecedor extends Model
     // Nome alterado para correção no db
     protected $table = 'fornecedores';
     protected $fillable = ['nome', 'site', 'uf', 'email'];
+
+    public function produtos(){
+        // Model de referência, coluna que contem a foreign_key, coluna de referência
+        return $this->hasMany('App\Item','fornecedor_id','id');
+    }
 }
