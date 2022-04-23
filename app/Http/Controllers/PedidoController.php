@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pedido;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -13,7 +14,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::paginate(10);
+        return view('app.pedido.index', ['pedidos' => $pedidos]);
     }
 
     /**
