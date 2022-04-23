@@ -24,6 +24,7 @@
                             <th>Cliente</th>
                             <th></th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,8 +50,9 @@
                     </tbody>
                 </table>
                 <br>
+
                 {{ $pedidos->appends($request)->links() }}
-                Exibindo {{ $pedidos->count() }} pedidoss de {{ $pedidos->total() }}
+                Exibindo {{ $pedidos->count() }} pedidos de {{ $pedidos->total() }}
                 (de {{ $pedidos->firstItem() }} a {{ $pedidos->lastItem() }})
             </div>
         </div>
