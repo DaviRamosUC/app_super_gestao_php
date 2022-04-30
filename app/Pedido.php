@@ -18,6 +18,6 @@ class Pedido extends Model
             3 -> Representa o nome da FK da tabela mapeada pelo modelo na tabela relacionada
             4 -> Representa o nome da FK da tabela mapeada pelo model utilizada no relacionamento que estamos implementando
         */
-        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id');
+        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id')->withPivot('created_at');
     }
 }

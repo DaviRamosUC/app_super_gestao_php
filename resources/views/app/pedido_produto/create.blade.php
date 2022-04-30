@@ -25,12 +25,14 @@
                     <thead>
                         <th>ID</th>
                         <th>Nome do produto</th>
+                        <th>Data de inclusão do item no pedido</th>
                     </thead>
                     <tbody>
                         @foreach ($pedido->produtos as $produto)
                             <tr>
                                 <td>{{ $produto->id }}</td>
                                 <td>{{ $produto->nome }}</td>
+                                <td>{{ $produto->pivot->created_at }}</td>
                             </tr>
                         @endforeach
                     </tbody>
